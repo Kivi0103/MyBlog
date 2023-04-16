@@ -71,6 +71,72 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-线性单元学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/16/%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2023-04-16T12:55:51.000Z" itemprop="datePublished">2023-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/04/16/%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83%E5%AD%A6%E4%B9%A0/">线性单元学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>线性单元与感知器的区别：</p>
+<p>将感知器中的阶跃函数替换成了一个激活函数</p>
+<p>用来解决回归问题，感知器用来解决分类问题</p>
+<p>监督学习与无监督学习</p>
+<p>提供了标记输出y（即label）的为监督学习，反之没有提供的为无监督学习</p>
+<p>考虑监督学习</p>
+<p>误差：</p>
+<p>​	单个样本的误差：e&#x3D;½（y-y’）²</p>
+<p>​	总体误差：E&#x3D;∑e(i)</p>
+<p>模型的训练，实际上就是求取到合适的 ，使E取得最小值。这在数学上称作优化问题，而 就是我们优化的目标，称之为目标函数。</p>
+<p>梯度下降优化算法：</p>
+<p>梯度是一个向量，它指向函数值上升最快的方向，梯度的反方向当然就是函数值下降最快的方向了。我们每次沿着梯度相反方向去修改 的值，当然就能走到函数的最小值附近</p>
+<p>公式：见手写笔记</p>
+<p>梯度∇E(w)的推导：见手写笔记</p>
+<p>随机梯度下降算法：</p>
+<p>每次随机挑选一个样本，对其进行梯度下降算法更新参数</p>
+<ol>
+<li>计算效率高。BGD需要在每一次迭代时对整个训练集进行计算，而SGD每次仅使用一个样本进行计算，因此计算量更小，运行速度更快。</li>
+<li>学习效果更好。BGD在每次迭代时使用全部样本进行计算，这可能导致模型过度拟合（overfitting）训练数据，而SGD每次仅使用一个样本进行计算，更容易找到全局最优解，并且能够逃离局部最优解。</li>
+</ol>
+<p>手撸线性单元代码</p>
+<p>​	问题：matplotlib安装不了，换源也不行</p>
+<p>​	解决：安装了anaconda，使用anaconda的包安装</p>
+<p>结果正确</p>
+<p><img src="D:\MyBlog\source_posts\线性单元学习\Snipaste_2023-04-16_20-56-56.png"></p>
+<p>手写笔记：</p>
+<p><img src="D:\MyBlog\source_posts\线性单元学习\微信图片_20230416211531.jpg" alt="微信图片_20230416211531"></p>
+<p><img src="D:\MyBlog\source_posts\线性单元学习\微信图片_20230416211452.jpg" alt="微信图片_20230416211452"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/04/16/%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83%E5%AD%A6%E4%B9%A0/" data-id="clgjfyfh10004icth86zi6p5n" data-title="线性单元学习" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-个人博客230415" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/04/16/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2230415/" class="article-date">
@@ -107,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/16/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2230415/" data-id="clgit5p000000m4th783sdy67" data-title="个人博客230415" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/04/16/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2230415/" data-id="clgjfyfgt0001icth2jrrdiww" data-title="个人博客230415" class="article-share-link">Share</a>
       
       
       
@@ -159,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/16/%E6%84%9F%E7%9F%A5%E5%99%A8%E5%AD%A6%E4%B9%A0230409/" data-id="clgit5p0m0001m4th3sloch21" data-title="感知器学习230409" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/04/16/%E6%84%9F%E7%9F%A5%E5%99%A8%E5%AD%A6%E4%B9%A0230409/" data-id="clgjfyfgz0003ictha7gubine" data-title="感知器学习230409" class="article-share-link">Share</a>
       
       
       
@@ -291,7 +357,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/16/Git%E5%AD%A6%E4%B9%A0230408/" data-id="clgit0kgz00004oth6vey9ax8" data-title="Git学习230408" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/04/16/Git%E5%AD%A6%E4%B9%A0230408/" data-id="clgjfyfgx0002icth6vggffyv" data-title="Git学习230408" class="article-share-link">Share</a>
       
       
       
@@ -342,7 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/16/hello-world/" data-id="clgisgvar0001egth7f5ud7br" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/04/16/hello-world/" data-id="clgjfyfgc0000icth7milbz8n" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -383,6 +449,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/04/16/%E7%BA%BF%E6%80%A7%E5%8D%95%E5%85%83%E5%AD%A6%E4%B9%A0/">线性单元学习</a>
+          </li>
         
           <li>
             <a href="/2023/04/16/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2230415/">个人博客230415</a>
