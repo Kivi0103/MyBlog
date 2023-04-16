@@ -102,4 +102,6 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git #部署方式
+  repository: git@github.com:Kivi0103/MyBlog.git #关联github仓库
+  branch: run-page #部署分支
