@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>感知器学习230409 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="手写感知器（23&#x2F;04&#x2F;09）编写实现向量计算的类静态函数：dot（计算两个向量的内积）1.reduce函数：reduce函数用于对列表，元组等可迭代的对象中的所有元素进行累积操作，返回一个单一的结果。reduce() 函数接受两个参数：一个函数和一个可迭代对象。该函数在每个元素上进行操作，并返回一个累积的结果。例如 1234from functools import redu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="感知器学习230409">
+<meta property="og:url" content="http://example.com/2023/04/16/%E6%84%9F%E7%9F%A5%E5%99%A8%E5%AD%A6%E4%B9%A0230409/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="手写感知器（23&#x2F;04&#x2F;09）编写实现向量计算的类静态函数：dot（计算两个向量的内积）1.reduce函数：reduce函数用于对列表，元组等可迭代的对象中的所有元素进行累积操作，返回一个单一的结果。reduce() 函数接受两个参数：一个函数和一个可迭代对象。该函数在每个元素上进行操作，并返回一个累积的结果。例如 1234from functools import redu">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-04-16T02:46:43.000Z">
+<meta property="article:modified_time" content="2023-04-16T02:47:14.339Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-感知器学习230409" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/16/%E6%84%9F%E7%9F%A5%E5%99%A8%E5%AD%A6%E4%B9%A0230409/" class="article-date">
+  <time class="dt-published" datetime="2023-04-16T02:46:43.000Z" itemprop="datePublished">2023-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      感知器学习230409
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="手写感知器（23-x2F-04-x2F-09）"><a href="#手写感知器（23-x2F-04-x2F-09）" class="headerlink" title="手写感知器（23&#x2F;04&#x2F;09）"></a>手写感知器（23&#x2F;04&#x2F;09）</h1><h2 id="编写实现向量计算的类"><a href="#编写实现向量计算的类" class="headerlink" title="编写实现向量计算的类"></a>编写实现向量计算的类</h2><h3 id="静态函数："><a href="#静态函数：" class="headerlink" title="静态函数："></a>静态函数：</h3><h4 id="dot（计算两个向量的内积）"><a href="#dot（计算两个向量的内积）" class="headerlink" title="dot（计算两个向量的内积）"></a>dot（计算两个向量的内积）</h4><p>1.reduce函数：reduce函数用于对列表，元组等可迭代的对象中的所有元素进行累积操作，返回一个单一的结果。reduce() 函数接受两个参数：一个函数和一个可迭代对象。该函数在每个元素上进行操作，并返回一个累积的结果。例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from functools import reduce</span><br><span class="line">lst = [1, 2, 3, 4, 5]</span><br><span class="line">result = reduce(lambda x, y: x*y, lst)</span><br><span class="line">print(result)   # 输出 120，即 1*2*3*4*5</span><br></pre></td></tr></table></figure>
+
+<p>2.通过调用<code>VectorOp.element_multiply(x, y)</code>计算两个向量相应元素的乘积列表</p>
+<p>3.再调用reduce函数将VectorOp.element_multiply返回回来的列表各项相加起来，结果返回</p>
+<h4 id="element-multiply（将两个列表相应位置相乘得到一个新列表）"><a href="#element-multiply（将两个列表相应位置相乘得到一个新列表）" class="headerlink" title="element_multiply（将两个列表相应位置相乘得到一个新列表）"></a>element_multiply（将两个列表相应位置相乘得到一个新列表）</h4><p>1.zip函数：将x和y中相应的元素打包成一个元组，并返回一个迭代器</p>
+<p>2.map函数：第一个参数是一个函数，第二个参数是可迭代对象，将第二个参数中的每个元素都执行一遍第一个参数中的函数，结果用list转换成列表对象</p>
+<h4 id="scala-multiply（将v的每个元素都乘以s）"><a href="#scala-multiply（将v的每个元素都乘以s）" class="headerlink" title="scala_multiply（将v的每个元素都乘以s）"></a>scala_multiply（将v的每个元素都乘以s）</h4><h2 id="构建感知器类"><a href="#构建感知器类" class="headerlink" title="构建感知器类"></a>构建感知器类</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h4 id="1-初始化函数"><a href="#1-初始化函数" class="headerlink" title="1.初始化函数"></a>1.初始化函数</h4><p>定义激活函数，权重列表，偏置</p>
+<h4 id="2-打印信息函数"><a href="#2-打印信息函数" class="headerlink" title="2.打印信息函数"></a>2.打印信息函数</h4><p>将权重和偏置打印出来</p>
+<h4 id="3-预测输出函数"><a href="#3-预测输出函数" class="headerlink" title="3.预测输出函数"></a>3.预测输出函数</h4><p>通过调用VectorOp类的dot函数进行计算最终结果并返回</p>
+<h4 id="4-训练函数"><a href="#4-训练函数" class="headerlink" title="4.训练函数"></a>4.训练函数</h4><p>接收4个参数，分别是一个输入列表input_vecs，里面分别有4个子列表[1,1],[1,0],[0,1],[0,0]，一个标签labels，分别对应输入的四个正确结果，训练迭代次数iteration，以及参数更新速率rate，循环调用_one_iteration函数iteration次</p>
+<h4 id="5-单次训练"><a href="#5-单次训练" class="headerlink" title="5.单次训练"></a>5.单次训练</h4><p>每次对四个输入进行输出预测，并通过调用更新参数的函数_update_weights更新权重和偏置</p>
+<h4 id="6-更新参数"><a href="#6-更新参数" class="headerlink" title="6.更新参数"></a>6.更新参数</h4><p>利用真实标签和预测值的差值再乘以速率作为更新的梯度</p>
+<p>总结：了解了感知器的工作原理，但是不能独立使用python编写出来，接下来工作先学习一下python的基础知识，再自己独立构建</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/04/16/%E6%84%9F%E7%9F%A5%E5%99%A8%E5%AD%A6%E4%B9%A0230409/" data-id="clgit5p0m0001m4th3sloch21" data-title="感知器学习230409" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/04/16/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2230415/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          个人博客230415
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/04/16/Git%E5%AD%A6%E4%B9%A0230408/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Git学习230408</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/16/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2230415/">个人博客230415</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/16/%E6%84%9F%E7%9F%A5%E5%99%A8%E5%AD%A6%E4%B9%A0230409/">感知器学习230409</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/16/Git%E5%AD%A6%E4%B9%A0230408/">Git学习230408</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/16/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -71,6 +71,106 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-个人博客230415" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/16/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2230415/" class="article-date">
+  <time class="dt-published" datetime="2023-04-16T02:48:12.000Z" itemprop="datePublished">2023-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/04/16/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2230415/">个人博客230415</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="1-复习了感知器算法"><a href="#1-复习了感知器算法" class="headerlink" title="1.复习了感知器算法"></a>1.复习了感知器算法</h3><h3 id="2-安装pycharm"><a href="#2-安装pycharm" class="headerlink" title="2.安装pycharm"></a>2.安装pycharm</h3><h3 id="3-使用Hexo-Github-Netlify部署个人博客"><a href="#3-使用Hexo-Github-Netlify部署个人博客" class="headerlink" title="3.使用Hexo+Github+Netlify部署个人博客"></a>3.使用Hexo+Github+Netlify部署个人博客</h3><p> 1.安装node</p>
+<p> 2.安装hexo</p>
+<p> 问题：hexo初始化时报错：fatal: unable to access ‘<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-starter.git/">https://github.com/hexojs/hexo-starter.git/</a>‘: SSL certificate problem: unable to get local issuer certificate</p>
+<p> 解决办法：由于当你通过HTTPS访问Git远程仓库的时候，如果服务器上的SSL证书未经过第三方机构认证，git就会报错。原因是因为未知的没有签署过的证书意味着可能存在很大的风险。解决办法就是通过下面的命令将git中的sslverify关掉：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --system http.sslverify false</span><br></pre></td></tr></table></figure>
+
+<p> 3.部署</p>
+<p> 3.1 同步到github</p>
+<p> 问题：关联不上github的repository</p>
+<p> 解决：因为本地仓库没有初始化成Git仓库，使用git init初始化</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/04/16/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2230415/" data-id="clgit5p000000m4th783sdy67" data-title="个人博客230415" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-感知器学习230409" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/16/%E6%84%9F%E7%9F%A5%E5%99%A8%E5%AD%A6%E4%B9%A0230409/" class="article-date">
+  <time class="dt-published" datetime="2023-04-16T02:46:43.000Z" itemprop="datePublished">2023-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/04/16/%E6%84%9F%E7%9F%A5%E5%99%A8%E5%AD%A6%E4%B9%A0230409/">感知器学习230409</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="手写感知器（23-x2F-04-x2F-09）"><a href="#手写感知器（23-x2F-04-x2F-09）" class="headerlink" title="手写感知器（23&#x2F;04&#x2F;09）"></a>手写感知器（23&#x2F;04&#x2F;09）</h1><h2 id="编写实现向量计算的类"><a href="#编写实现向量计算的类" class="headerlink" title="编写实现向量计算的类"></a>编写实现向量计算的类</h2><h3 id="静态函数："><a href="#静态函数：" class="headerlink" title="静态函数："></a>静态函数：</h3><h4 id="dot（计算两个向量的内积）"><a href="#dot（计算两个向量的内积）" class="headerlink" title="dot（计算两个向量的内积）"></a>dot（计算两个向量的内积）</h4><p>1.reduce函数：reduce函数用于对列表，元组等可迭代的对象中的所有元素进行累积操作，返回一个单一的结果。reduce() 函数接受两个参数：一个函数和一个可迭代对象。该函数在每个元素上进行操作，并返回一个累积的结果。例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from functools import reduce</span><br><span class="line">lst = [1, 2, 3, 4, 5]</span><br><span class="line">result = reduce(lambda x, y: x*y, lst)</span><br><span class="line">print(result)   # 输出 120，即 1*2*3*4*5</span><br></pre></td></tr></table></figure>
+
+<p>2.通过调用<code>VectorOp.element_multiply(x, y)</code>计算两个向量相应元素的乘积列表</p>
+<p>3.再调用reduce函数将VectorOp.element_multiply返回回来的列表各项相加起来，结果返回</p>
+<h4 id="element-multiply（将两个列表相应位置相乘得到一个新列表）"><a href="#element-multiply（将两个列表相应位置相乘得到一个新列表）" class="headerlink" title="element_multiply（将两个列表相应位置相乘得到一个新列表）"></a>element_multiply（将两个列表相应位置相乘得到一个新列表）</h4><p>1.zip函数：将x和y中相应的元素打包成一个元组，并返回一个迭代器</p>
+<p>2.map函数：第一个参数是一个函数，第二个参数是可迭代对象，将第二个参数中的每个元素都执行一遍第一个参数中的函数，结果用list转换成列表对象</p>
+<h4 id="scala-multiply（将v的每个元素都乘以s）"><a href="#scala-multiply（将v的每个元素都乘以s）" class="headerlink" title="scala_multiply（将v的每个元素都乘以s）"></a>scala_multiply（将v的每个元素都乘以s）</h4><h2 id="构建感知器类"><a href="#构建感知器类" class="headerlink" title="构建感知器类"></a>构建感知器类</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h4 id="1-初始化函数"><a href="#1-初始化函数" class="headerlink" title="1.初始化函数"></a>1.初始化函数</h4><p>定义激活函数，权重列表，偏置</p>
+<h4 id="2-打印信息函数"><a href="#2-打印信息函数" class="headerlink" title="2.打印信息函数"></a>2.打印信息函数</h4><p>将权重和偏置打印出来</p>
+<h4 id="3-预测输出函数"><a href="#3-预测输出函数" class="headerlink" title="3.预测输出函数"></a>3.预测输出函数</h4><p>通过调用VectorOp类的dot函数进行计算最终结果并返回</p>
+<h4 id="4-训练函数"><a href="#4-训练函数" class="headerlink" title="4.训练函数"></a>4.训练函数</h4><p>接收4个参数，分别是一个输入列表input_vecs，里面分别有4个子列表[1,1],[1,0],[0,1],[0,0]，一个标签labels，分别对应输入的四个正确结果，训练迭代次数iteration，以及参数更新速率rate，循环调用_one_iteration函数iteration次</p>
+<h4 id="5-单次训练"><a href="#5-单次训练" class="headerlink" title="5.单次训练"></a>5.单次训练</h4><p>每次对四个输入进行输出预测，并通过调用更新参数的函数_update_weights更新权重和偏置</p>
+<h4 id="6-更新参数"><a href="#6-更新参数" class="headerlink" title="6.更新参数"></a>6.更新参数</h4><p>利用真实标签和预测值的差值再乘以速率作为更新的梯度</p>
+<p>总结：了解了感知器的工作原理，但是不能独立使用python编写出来，接下来工作先学习一下python的基础知识，再自己独立构建</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/04/16/%E6%84%9F%E7%9F%A5%E5%99%A8%E5%AD%A6%E4%B9%A0230409/" data-id="clgit5p0m0001m4th3sloch21" data-title="感知器学习230409" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Git学习230408" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/04/16/Git%E5%AD%A6%E4%B9%A0230408/" class="article-date">
@@ -203,45 +303,6 @@
 
 
   
-    <article id="post-PreLearning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/04/16/PreLearning/" class="article-date">
-  <time class="dt-published" datetime="2023-04-16T01:57:27.000Z" itemprop="datePublished">2023-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/04/16/PreLearning/">PreLearning</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>This is test</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/16/PreLearning/" data-id="clgisgva10000egthhmj8apeh" data-title="PreLearning" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/04/16/hello-world/" class="article-date">
@@ -324,11 +385,15 @@
       <ul>
         
           <li>
-            <a href="/2023/04/16/Git%E5%AD%A6%E4%B9%A0230408/">Git学习230408</a>
+            <a href="/2023/04/16/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2230415/">个人博客230415</a>
           </li>
         
           <li>
-            <a href="/2023/04/16/PreLearning/">PreLearning</a>
+            <a href="/2023/04/16/%E6%84%9F%E7%9F%A5%E5%99%A8%E5%AD%A6%E4%B9%A0230409/">感知器学习230409</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/16/Git%E5%AD%A6%E4%B9%A0230408/">Git学习230408</a>
           </li>
         
           <li>
