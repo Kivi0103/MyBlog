@@ -71,15 +71,25 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-GitStudy" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Git学习230408" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/04/16/GitStudy/" class="article-date">
-  <time class="dt-published" datetime="2023-04-16T02:41:04.837Z" itemprop="datePublished">2023-04-16</time>
+    <a href="/2023/04/16/Git%E5%AD%A6%E4%B9%A0230408/" class="article-date">
+  <time class="dt-published" datetime="2023-04-16T02:43:38.000Z" itemprop="datePublished">2023-04-16</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/04/16/Git%E5%AD%A6%E4%B9%A0230408/">Git学习230408</a>
+    </h1>
+  
+
+      </header>
     
     <div class="e-content article-entry" itemprop="articleBody">
       
@@ -108,7 +118,7 @@
 <p>暂存区</p>
 <p>工作区有一个隐藏目录<code>.git</code>，这个不算工作区，而是Git的版本库</p>
 <p>Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支<code>master</code>，以及指向<code>master</code>的一个指针叫<code>HEAD</code></p>
-<p><img src="C:\Users\Kivi\AppData\Roaming\Typora\typora-user-images\image-20230408110051000.png" alt="image-20230408110051000"></p>
+<p><a href="file:///C:/Users/Kivi/AppData/Roaming/Typora/typora-user-images/image-20230408110051000.png"><img src="file:///C:/Users/Kivi/AppData/Roaming/Typora/typora-user-images/image-20230408110051000.png" alt="image-20230408110051000"></a>image-20230408110051000</p>
 <p>简单理解为需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改</p>
 <p><code>git add</code>命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行<code>git commit</code>就可以一次性把暂存区的所有修改提交到分支。</p>
 <h5 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h5><p>只有add过的内容提交过后才能被commit提交</p>
@@ -122,10 +132,10 @@
 <li>学会如何将github上的仓库克隆到本地</li>
 </ul>
 <h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h4 id="创建和合并分支"><a href="#创建和合并分支" class="headerlink" title="创建和合并分支"></a>创建和合并分支</h4><p>有一个主分支master分支，<code>master</code>分支是一条线，Git用<code>master</code>指向最新的提交，再用<code>HEAD</code>指向<code>master</code>，就能确定当前分支，以及当前分支的提交点：</p>
-<p><img src="C:\Users\Kivi\AppData\Roaming\Typora\typora-user-images\image-20230408152759164.png" alt="image-20230408152759164"></p>
+<p><a href="file:///C:/Users/Kivi/AppData/Roaming/Typora/typora-user-images/image-20230408152759164.png"><img src="file:///C:/Users/Kivi/AppData/Roaming/Typora/typora-user-images/image-20230408152759164.png" alt="image-20230408152759164"></a>image-20230408152759164</p>
 <p>创建分支：</p>
 <p>使用命令<code>$ git checkout -b dev</code>创建一个名为dev分支，并且切换到该分支下</p>
-<p><img src="C:\Users\Kivi\AppData\Roaming\Typora\typora-user-images\image-20230408153124894.png" alt="image-20230408153124894"></p>
+<p><a href="file:///C:/Users/Kivi/AppData/Roaming/Typora/typora-user-images/image-20230408153124894.png"><img src="file:///C:/Users/Kivi/AppData/Roaming/Typora/typora-user-images/image-20230408153124894.png" alt="image-20230408153124894"></a>image-20230408153124894</p>
 <p>合并分支：</p>
 <p>使用命令<code>$ git merge dev</code>把<code>dev</code>分支的工作成果合并到<code>master</code>分支上</p>
 <p>切换回<code>master</code>分支：</p>
@@ -161,8 +171,6 @@
 <li>首先，切换到需要打标签的分支上</li>
 <li>敲命令<code>git tag &lt;name&gt;</code>就可以打一个新标签</li>
 </ol>
- <!--注意：标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签。-->
-
 <ul>
 <li>命令<code>git tag &lt;tagname&gt;</code>用于新建一个标签，默认为<code>HEAD</code>，也可以指定一个commit id；</li>
 <li>命令<code>git tag -a &lt;tagname&gt; -m &quot;blablabla...&quot;</code>可以指定标签信息；</li>
@@ -183,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/16/GitStudy/" data-id="clgiswb6y0000ksthhwarh4ei" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/04/16/Git%E5%AD%A6%E4%B9%A0230408/" data-id="clgit0kgz00004oth6vey9ax8" data-title="Git学习230408" class="article-share-link">Share</a>
       
       
       
@@ -316,7 +324,7 @@
       <ul>
         
           <li>
-            <a href="/2023/04/16/GitStudy/">(no title)</a>
+            <a href="/2023/04/16/Git%E5%AD%A6%E4%B9%A0230408/">Git学习230408</a>
           </li>
         
           <li>
